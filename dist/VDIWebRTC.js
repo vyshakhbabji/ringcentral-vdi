@@ -169,7 +169,8 @@ var VMManager = /** @class */ (function () {
     VMManager.prototype.startRedirection = function () {
         console.error('creating new pc');
     };
-    VMManager.prototype.onConnected = function () { };
+    VMManager.prototype.onConnected = function () {
+    };
     VMManager.prototype.onDisconnected = function () { };
     VMManager.prototype.onConnectionChange = function () { };
     VMManager.prototype.waitForRedirection = function () { };
@@ -214,19 +215,23 @@ function getDisplayMedia(constraints) {
 }
 exports.getDisplayMedia = getDisplayMedia;
 function mapVDIAudioElement(element) {
+    console.log('mapVDIAudioElement :not implemented');
     return element;
 }
 exports.mapVDIAudioElement = mapVDIAudioElement;
 function mapVDIVideoElement(element) {
+    console.log('mapVDIVideoElement :not implemented');
     return element;
 }
 exports.mapVDIVideoElement = mapVDIVideoElement;
 function addScreenClip(param) {
-    return;
+    console.log('addScreenClip :not implemented');
+    return null;
 }
 exports.addScreenClip = addScreenClip;
 function removeScreenClip(param) {
-    return;
+    console.log('removeScreenClip :not implemented');
+    return null;
 }
 exports.removeScreenClip = removeScreenClip;
 
