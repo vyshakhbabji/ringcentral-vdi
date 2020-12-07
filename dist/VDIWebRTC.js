@@ -116,7 +116,7 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 }));
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
-}
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(__webpack_require__(2), exports);
 __exportStar(__webpack_require__(3), exports);
@@ -145,7 +145,7 @@ var PeerConnection = /** @class */ (function () {
         this.configuration = configuration;
     }
     PeerConnection.prototype.createPeerConnection = function () {
-        console.error('creating new pc');
+        console.log('[rcStack logger]: Creating new peerConnection from rcStack');
         return new RTCPeerConnection(this.configuration);
     };
     return PeerConnection;
@@ -167,7 +167,7 @@ var VMManager = /** @class */ (function () {
         this.configuration = configuration;
     }
     VMManager.prototype.startRedirection = function () {
-        console.error('creating new pc');
+        console.log('[rcStack logger]: redirection not implemented');
     };
     VMManager.prototype.onConnected = function () {
     };
@@ -180,8 +180,14 @@ var VMManager = /** @class */ (function () {
     VMManager.prototype.setRemoteSessionInformation = function () { };
     VMManager.prototype.setRedirectionFeatures = function () { };
     VMManager.prototype.getRedirectionFeatures = function () { };
-    VMManager.prototype.ifFeatureOn = function () { };
+    VMManager.prototype.isFeatureOn = function () { };
     VMManager.prototype.vmEventManager = function () { };
+    VMManager.prototype.initVMManager = function () {
+        console.log('[rcStack logger]:Setting up CEF VMManager... \nLoading VMManager...');
+        var userAgent = navigator.userAgent;
+        console.log('[rcStack logger]: The app is running on CEF Browser. The userAgent is ', userAgent);
+        this.startRedirection();
+    };
     return VMManager;
 }());
 exports.VMManager = VMManager;
@@ -197,40 +203,43 @@ exports.default = VMManager;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.removeScreenClip = exports.addScreenClip = exports.mapVDIVideoElement = exports.mapVDIAudioElement = exports.getDisplayMedia = exports.mediaDevices = exports.enumerateDevices = exports.getUserMedia = void 0;
 function getUserMedia(constraints) {
-    console.error('from index getUJSermedia');
+    console.warn('[rcStack logger]: loading getUserMedia from rcStack...');
     return navigator.mediaDevices.getUserMedia(constraints);
 }
 exports.getUserMedia = getUserMedia;
 function enumerateDevices() {
+    console.log('[rcStack logger]: loading enumerate devices List from rcStack...');
     return navigator.mediaDevices.enumerateDevices();
 }
 exports.enumerateDevices = enumerateDevices;
 function mediaDevices() {
+    console.log('[rcStack logger]: Loading mediaDevices from rcStack...');
     return navigator.mediaDevices;
 }
 exports.mediaDevices = mediaDevices;
 function getDisplayMedia(constraints) {
+    console.log('[rcStack logger]: Loading getDisplayMedia from rcStack...');
     var mediaDevices = navigator.mediaDevices;
     return mediaDevices.getDisplayMedia(constraints);
 }
 exports.getDisplayMedia = getDisplayMedia;
 function mapVDIAudioElement(element) {
-    console.log('mapVDIAudioElement :not implemented');
+    console.log('mapVDIAudioElement: not implemented');
     return element;
 }
 exports.mapVDIAudioElement = mapVDIAudioElement;
 function mapVDIVideoElement(element) {
-    console.log('mapVDIVideoElement :not implemented');
+    console.log('[rcStack logger]: mapVDIVideoElement: not implemented');
     return element;
 }
 exports.mapVDIVideoElement = mapVDIVideoElement;
 function addScreenClip(param) {
-    console.log('addScreenClip :not implemented');
+    console.log('[rcStack logger]: addScreenClip :not implemented');
     return null;
 }
 exports.addScreenClip = addScreenClip;
 function removeScreenClip(param) {
-    console.log('removeScreenClip :not implemented');
+    console.log('[rcStack logger]: removeScreenClip :not implemented');
     return null;
 }
 exports.removeScreenClip = removeScreenClip;

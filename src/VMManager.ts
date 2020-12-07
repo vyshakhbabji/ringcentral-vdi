@@ -6,7 +6,7 @@ export default class VMManager {
     }
 
     public startRedirection() {
-        console.error('creating new pc');
+        console.log('[rcStack logger]: redirection not implemented');
     }
 
     public onConnected() {
@@ -21,7 +21,13 @@ export default class VMManager {
     public setRemoteSessionInformation() {}
     public setRedirectionFeatures() {}
     public getRedirectionFeatures() {}
-    public ifFeatureOn() {}
+    public isFeatureOn() {}
     public vmEventManager() {}
+    public initVMManager(){
+        console.log('[rcStack logger]:Setting up CEF VMManager... \nLoading VMManager...')
+        var userAgent  = navigator.userAgent;
+        console.log('[rcStack logger]: The app is running on CEF Browser. The userAgent is ', userAgent);
+        this.startRedirection();
+    }
 }
 export {VMManager};

@@ -5,7 +5,7 @@ export default class PeerConnection {
         this.configuration = configuration;
     }
     public createPeerConnection(){
-        console.error('creating new pc');
+        console.log('[rcStack logger]: Creating new peerConnection from rcStack');
         return new RTCPeerConnection(this.configuration);
     }
 }

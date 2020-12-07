@@ -12,7 +12,8 @@ export default class VMManager {
     setRemoteSessionInformation(): void;
     setRedirectionFeatures(): void;
     getRedirectionFeatures(): void;
-    ifFeatureOn(): void;
+    isFeatureOn(): void;
     vmEventManager(): void;
+    initVMManager(): void;
 }
 export { VMManager };
