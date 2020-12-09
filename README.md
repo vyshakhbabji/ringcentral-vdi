@@ -1,4 +1,4 @@
-# ringcentral-vdi
+# ringcentral-vdi-js
 
 ## About
 A thin wrapper lbrary which wraps subset of browser apis , RTCPeerConnection API and VDI VM Manager apis which will be further customized for running on VDI environment by adding custom feature/functionality to support webRTC media redirection
